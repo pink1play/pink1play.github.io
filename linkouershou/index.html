@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林口二手房-房源信息、购房流程与选房参考指南</title>
+<meta name="description" content="林口二手房信息参考平台，整理林口地区二手房选房思路、购房流程、税费常识、看房注意事项与常见问题，帮助购房者更理性地了解林口二手房市场。">
+<meta name="keywords" content="林口二手房,林口二手房房源,林口买房,二手房交易流程,林口二手房注意事项">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --brand:#0f6b5c;
+    --brand-light:#e7f3f0;
+    --brand-dark:#0a4c41;
+    --accent:#d98324;
+    --ink:#1c2b28;
+    --ink-soft:#5a6b67;
+    --line:#dbe6e3;
+    --bg:#f6f9f8;
+    --white:#ffffff;
+    --radius:12px;
+    --shadow:0 6px 24px rgba(15,107,92,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+
+  .wrap{
+    width:100%;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  /* ---------- 顶部信息条 ---------- */
+  .topbar{
+    background:var(--brand-dark);
+    color:#cfe6e1;
+    font-size:13px;
+    padding:7px 0;
+  }
+  .topbar .wrap{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .topbar span{opacity:.92;}
+
+  /* ---------- 页眉 ---------- */
+  header.site-head{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .head-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:14px 0;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:700;
+    font-size:20px;
+    color:var(--brand-dark);
+    letter-spacing:.5px;
+  }
+  .logo-mark{
+    width:38px;height:38px;
+    border-radius:10px;
+    background:linear-gradient(135deg,var(--brand),var(--brand-dark));
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:18px;
+    font-weight:700;
+    flex-shrink:0;
+  }
+  .logo small{
+    display:block;
+    font-size:11px;
+    font-weight:400;
+    color:var(--ink-soft);
+    letter-spacing:1px;
+  }
+  nav.main-nav ul{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+  }
+  nav.main-nav a{
+    display:block;
+    padding:8px 14px;
+    border-radius:8px;
+    font-size:15px;
+    color:var(--ink-soft);
+    transition:.2s;
+  }
+  nav.main-nav a:hover,
+  nav.main-nav a.active{
+    background:var(--brand-light);
+    color:var(--brand-dark);
+    font-weight:600;
+  }
+
+  /* ---------- 首屏 ---------- */
+  .hero{
+    background:
+      radial-gradient(circle at 88% 12%, rgba(217,131,36,.16), transparent 42%),
+      linear-gradient(160deg,#0f6b5c 0%,#0a4c41 62%,#083b33 100%);
+    color:#eaf5f2;
+    padding:56px 0 48px;
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1.35fr 1fr;
+    gap:44px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:34px;
+    line-height:1.35;
+    font-weight:800;
+    letter-spacing:.5px;
+    margin-bottom:16px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:#ffd79a;
+  }
+  .hero p.lead{
+    font-size:16px;
+    color:#c6e2dc;
+    margin-bottom:22px;
+    max-width:560px;
+  }
+  .hero-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .hero-tags span{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.18);
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:13.5px;
+    color:#e3f2ee;
+  }
+  .hero-panel{
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:var(--radius);
+    padding:24px 22px;
+    backdrop-filter:blur(2px);
+  }
+  .hero-panel h2{
+    font-size:17px;
+    margin-bottom:16px;
+    color:#fff;
+    font-weight:700;
+  }
+  .hero-panel ul li{
+    display:flex;
+    gap:10px;
+    font-size:14.5px;
+    color:#d4e9e4;
+    padding:8px 0;
+    border-bottom:1px dashed rgba(255,255,255,.13);
+  }
+  .hero-panel ul li:last-child{border-bottom:none;}
+  .hero-panel .dot{
+    width:7px;height:7px;
+    border-radius:50%;
+    background:var(--accent);
+    margin-top:9px;
+    flex-shrink:0;
+  }
+
+  /* ---------- 通用区块 ---------- */
+  section{padding:52px 0;}
+  .sec-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:18px;
+    margin-bottom:28px;
+    flex-wrap:wrap;
+  }
+  .sec-head h2{
+    font-size:24px;
+    color:var(--brand-dark);
+    font-weight:800;
+    letter-spacing:.5px;
+    position:relative;
+    padding-left:16px;
+  }
+  .sec-head h2::before{
+    content:"";
+    position:absolute;
+    left:0;top:50%;
+    transform:translateY(-50%);
+    width:5px;height:22px;
+    border-radius:3px;
+    background:linear-gradient(180deg,var(--brand),var(--accent));
+  }
+  .sec-head p{
+    font-size:14px;
+    color:var(--ink-soft);
+    max-width:560px;
+  }
+
+  /* ---------- 分类导航 ---------- */
+  .cat-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:16px;
+  }
+  .cat-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 20px;
+    transition:.22s;
+    display:block;
+  }
+  .cat-card:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow);
+    border-color:#bfdcd5;
+  }
+  .cat-card .ico{
+    width:42px;height:42px;
+    border-radius:10px;
+    background:var(--brand-light);
+    color:var(--brand-dark);
+    display:flex;align-items:center;justify-content:center;
+    font-size:20px;
+    margin-bottom:14px;
+  }
+  .cat-card h3{
+    font-size:16px;
+    margin-bottom:6px;
+    color:var(--ink);
+    font-weight:700;
+  }
+  .cat-card p{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+
+  /* ---------- 房源参考列表 ---------- */
+  .listing{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+  }
+  .listing-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:.22s;
+  }
+  .listing-card:hover{
+    box-shadow:var(--shadow);
+    transform:translateY(-3px);
+  }
+  .listing-thumb{
+    height:132px;
+    background:linear-gradient(135deg,#0f6b5c,#0a4c41);
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:rgba(255,255,255,.55);
+    font-size:13px;
+    letter-spacing:2px;
+  }
+  .listing-thumb.alt{background:linear-gradient(135deg,#2b7a6b,#14574b);}
+  .listing-thumb.warm{background:linear-gradient(135deg,#b06a1f,#8a4f13);}
+  .listing-thumb .badge{
+    position:absolute;
+    top:12px;left:12px;
+    background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);
+    color:#fff;
+    font-size:12px;
+    padding:3px 10px;
+    border-radius:999px;
+    letter-spacing:0;
+  }
+  .listing-body{
+    padding:18px 18px 20px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+  }
+  .listing-body h3{
+    font-size:16.5px;
+    font-weight:700;
+    margin-bottom:10px;
+    color:var(--ink);
+  }
+  .listing-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:12px;
+  }
+  .listing-meta span{
+    font-size:12.5px;
+    color:var(--brand-dark);
+    background:var(--brand-light);
+    padding:3px 10px;
+    border-radius:6px;
+  }
+  .listing-body p{
+    font-size:14px;
+    color:var(--ink-soft);
+    flex:1;
+  }
+  .listing-foot{
+    margin-top:14px;
+    padding-top:13px;
+    border-top:1px dashed var(--line);
+    font-size:13px;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .listing-foot strong{
+    color:var(--accent);
+    font-weight:700;
+  }
+
+  /* ---------- 流程时间线 ---------- */
+  .flow{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:32px 28px;
+  }
+  .flow-steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+  }
+  .flow-step{
+    position:relative;
+    padding-left:46px;
+  }
+  .flow-step .num{
+    position:absolute;
+    left:0;top:0;
+    width:32px;height:32px;
+    border-radius:50%;
+    background:var(--brand);
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .flow-step h3{
+    font-size:15.5px;
+    margin-bottom:6px;
+    color:var(--brand-dark);
+    font-weight:700;
+  }
+  .flow-step p{
+    font-size:13.8px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- 双栏内容 ---------- */
+  .two-col{
+    display:grid;
+    grid-template-columns:1.6fr 1fr;
+    gap:30px;
+    align-items:start;
+  }
+  .article-box{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:30px 28px;
+  }
+  .article-box h2{
+    font-size:22px;
+    color:var(--brand-dark);
+    margin-bottom:16px;
+    font-weight:800;
+  }
+  .article-box h3{
+    font-size:17px;
+    margin:22px 0 10px;
+    color:var(--brand-dark);
+    font-weight:700;
+  }
+  .article-box p{
+    font-size:15px;
+    color:#33433f;
+    margin-bottom:12px;
+  }
+  .article-box ul.bullet{
+    margin:8px 0 14px 0;
+  }
+  .article-box ul.bullet li{
+    position:relative;
+    padding-left:20px;
+    font-size:14.6px;
+    color:#33433f;
+    margin-bottom:8px;
+  }
+  .article-box ul.bullet li::before{
+    content:"";
+    position:absolute;
+    left:2px;top:10px;
+    width:7px;height:7px;
+    border-radius:2px;
+    background:var(--accent);
+    transform:rotate(45deg);
+  }
+  .side-box{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px 22px;
+    margin-bottom:20px;
+  }
+  .side-box h3{
+    font-size:17px;
+    color:var(--brand-dark);
+    margin-bottom:14px;
+    font-weight:700;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--line);
+  }
+  .side-box ol{
+    counter-reset:rank;
+  }
+  .side-box ol li{
+    counter-increment:rank;
+    position:relative;
+    padding:9px 0 9px 34px;
+    font-size:14.2px;
+    color:#33433f;
+    border-bottom:1px dashed var(--line);
+  }
+  .side-box ol li:last-child{border-bottom:none;}
+  .side-box ol li::before{
+    content:counter(rank);
+    position:absolute;
+    left:0;top:10px;
+    width:22px;height:22px;
+    border-radius:6px;
+    background:var(--brand-light);
+    color:var(--brand-dark);
+    font-size:12.5px;
+    font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .side-note{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    line-height:1.7;
+  }
+
+  /* ---------- 注意事项 ---------- */
+  .tips-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+  }
+  .tip-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-left:4px solid var(--accent);
+    border-radius:10px;
+    padding:20px;
+  }
+  .tip-card h3{
+    font-size:15.5px;
+    color:var(--brand-dark);
+    margin-bottom:8px;
+    font-weight:700;
+  }
+  .tip-card p{
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-list{
+    display:grid;
+    gap:14px;
+  }
+  .faq-item{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:18px 22px;
+  }
+  .faq-item h3{
+    font-size:15.8px;
+    color:var(--brand-dark);
+    margin-bottom:8px;
+    font-weight:700;
+    display:flex;
+    gap:10px;
+  }
+  .faq-item h3::before{
+    content:"问";
+    flex-shrink:0;
+    width:22px;height:22px;
+    border-radius:6px;
+    background:var(--brand);
+    color:#fff;
+    font-size:12.5px;
+    display:flex;align-items:center;justify-content:center;
+    margin-top:2px;
+  }
+  .faq-item p{
+    font-size:14.4px;
+    color:#3a4a46;
+    padding-left:32px;
+  }
+
+  /* ---------- 页脚 ---------- */
+  footer.site-foot{
+    background:#0a3d35;
+    color:#a9cbc4;
+    padding:44px 0 26px;
+    font-size:14px;
+  }
+  .foot-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1fr;
+    gap:30px;
+    margin-bottom:30px;
+  }
+  .foot-grid h4{
+    color:#fff;
+    font-size:15px;
+    margin-bottom:14px;
+    font-weight:700;
+  }
+  .foot-grid p{
+    font-size:13.5px;
+    line-height:1.8;
+    color:#94b8b1;
+  }
+  .foot-grid ul li{
+    margin-bottom:9px;
+  }
+  .foot-grid ul a{
+    font-size:13.5px;
+    color:#a9cbc4;
+    transition:.2s;
+  }
+  .foot-grid ul a:hover{color:#fff;}
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    padding-top:18px;
+    font-size:12.8px;
+    color:#7fa8a0;
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width:960px){
+    .hero-inner{grid-template-columns:1fr;gap:32px;}
+    .two-col{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:720px){
+    .head-inner{flex-direction:column;align-items:flex-start;gap:12px;}
+    nav.main-nav ul{gap:2px;}
+    nav.main-nav a{padding:7px 10px;font-size:14px;}
+    .hero{padding:40px 0 36px;}
+    .hero h1{font-size:26px;}
+    section{padding:40px 0;}
+    .sec-head h2{font-size:21px;}
+    .flow{padding:24px 18px;}
+    .article-box{padding:24px 18px;}
+  }
+  @media (max-width:480px){
+    .wrap{padding:0 16px;}
+    .hero h1{font-size:22px;}
+    .foot-grid{grid-template-columns:1fr;}
+    .listing{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>林口二手房信息参考 · 理性看房 · 谨慎交易</span>
+    <span>本站内容为购房知识整理，不构成交易建议</span>
+  </div>
+</div>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark">林</span>
+      <span>林口二手房
+        <small>LIN KOU RESALE HOME GUIDE</small>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <ul>
+        <li><a class="active" href="#top">首页</a></li>
+        <li><a href="#types">房源类型</a></li>
+        <li><a href="#flow">购房流程</a></li>
+        <li><a href="#guide">选房指南</a></li>
+        <li><a href="#tips">注意事项</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <h1>了解<em>林口二手房</em>，从看清需求与流程开始</h1>
+        <p class="lead">
+          林口二手房的选择，往往不只是比较面积和总价，还涉及地段、房龄、楼层、采光、产权状况与后续交易环节。这里把购房者最常关心的问题整理成清晰的参考框架，帮助你在看房前后少走弯路。
+        </p>
+        <div class="hero-tags">
+          <span>地段与配套</span>
+          <span>房龄与户型</span>
+          <span>产权核验</span>
+          <span>交易税费</span>
+          <span>贷款与过户</span>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <h2>看房前建议先想清楚这几点</h2>
+        <ul>
+          <li><span class="dot"></span><span>自住还是过渡：决定对面积、楼层和通勤的取舍</span></li>
+          <li><span class="dot"></span><span>预算上限：把税费、装修与搬家成本一并计入</span></li>
+          <li><span class="dot"></span><span>产权情况：确认权利人、抵押与共有情况</span></li>
+          <li><span class="dot"></span><span>房屋现状：结构、水电、防水与邻里环境</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 房源类型 -->
+  <section id="types">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>林口二手房常见房源类型</h2>
+        <p>不同类型的二手房，对应的居住体验、维护成本和交易关注点差异较大，先分清类型再筛选，效率会更高。</p>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-card" href="#guide">
+          <div class="ico">楼</div>
+          <h3>普通住宅小区</h3>
+          <p>配套相对成熟，物业与停车情况需实地确认，适合长期自住家庭重点关注。</p>
+        </a>
+        <a class="cat-card" href="#guide">
+          <div class="ico">梯</div>
+          <h3>多层与电梯房</h3>
+          <p>多层公摊通常较小，电梯房上下方便；需留意楼龄、电梯维护与采光遮挡。</p>
+        </a>
+        <a class="cat-card" href="#guide">
+          <div class="ico">小</div>
+          <h3>小户型与一居</h3>
+          <p>总价相对可控，适合过渡居住或单身需求，需关注通风、朝向与实用性。</p>
+        </a>
+        <a class="cat-card" href="#guide">
+          <div class="ico">改</div>
+          <h3>翻新与简装房</h3>
+          <p>装修状态影响入住成本，注意辨别翻新质量，避免只看表面效果。</p>
+        </a>
+        <a class="cat-card" href="#guide">
+          <div class="ico">边</div>
+          <h3>临街与边角户型</h3>
+          <p>价格可能更有优势，但噪音、保温与西晒等问题需要现场多次感受。</p>
+        </a>
+        <a class="cat-card" href="#guide">
+          <div class="ico">顶</div>
+          <h3>顶层与底层</h3>
+          <p>顶层关注防水与隔热，底层关注防潮、采光与安全性，价格常有差异。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 房源参考卡片 -->
+  <section style="background:#eef5f3;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>房源信息参考维度</h2>
+        <p>以下为看房时常用的信息整理维度示例，用于说明如何记录和对比房源，不代表真实在售房源。</p>
+      </div>
+      <div class="listing">
+
+        <article class="listing-card">
+          <div class="listing-thumb">
+            <span class="badge">参考示例</span>
+            户型与采光
+          </div>
+          <div class="listing-body">
+            <h3>南北通透两居 · 关注通风与采光</h3>
+            <div class="listing-meta">
+              <span>两室</span><span>中楼层</span><span>朝南</span>
+            </div>
+            <p>南北通透户型通常在通风与采光上表现更均衡，看房时建议分别在上午与傍晚各看一次，感受实际光照与室内温度。</p>
+            <div class="listing-foot">
+              <span>关注点：通风 / 采光</span>
+              <strong>实地确认</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="listing-card">
+          <div class="listing-thumb alt">
+            <span class="badge">参考示例</span>
+            房龄与维护
+          </div>
+          <div class="listing-body">
+            <h3>中等房龄住宅 · 关注水电与防水</h3>
+            <div class="listing-meta">
+              <span>三室</span><span>电梯房</span><span>房龄中等</span>
+            </div>
+            <p>房龄偏大的房屋，水电管线、外墙防水和门窗密封是重点。可询问是否做过整体翻新，并查看厨房卫生间有无渗水痕迹。</p>
+            <div class="listing-foot">
+              <span>关注点：管线 / 防水</span>
+              <strong>建议复看</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="listing-card">
+          <div class="listing-thumb warm">
+            <span class="badge">参考示例</span>
+            配套与通勤
+          </div>
+          <div class="listing-body">
+            <h3>近生活配套 · 关注日常便利度</h3>
+            <div class="listing-meta">
+              <span>两室</span><span>临街</span><span>配套较全</span>
+            </div>
+            <p>靠近市场、学校或公交站点的房源，日常便利度较高，但也要评估噪音、人流与停车压力，最好在早晚高峰实地走一趟。</p>
+            <div class="listing-foot">
+              <span>关注点：噪音 / 通勤</span>
+              <strong>分时段看房</strong>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 购房流程 -->
+  <section id="flow">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>二手房交易的一般流程</h2>
+        <p>各地具体规定与办理顺序可能存在差异，实际操作请以当地房产管理部门和贷款机构的要求为准。</p>
+      </div>
+      <div class="flow">
+        <div class="flow-steps">
+          <div class="flow-step">
+            <span class="num">1</span>
+            <h3>明确需求与预算</h3>
+            <p>确定购房用途、面积区间和可承受总价，预留税费与装修支出空间。</p>
+          </div>
+          <div class="flow-step">
+            <span class="num">2</span>
+            <h3>筛选与实地看房</h3>
+            <p>按地段、户型、楼层逐一比对，多次分时段看房，记录真实感受。</p>
+          </div>
+          <div class="flow-step">
+            <span class="num">3</span>
+            <h3>核验产权与房屋状况</h3>
+            <p>确认权利主体、共有情况、抵押与查封状态，了解房屋是否存在纠纷。</p>
+          </div>
+          <div class="flow-step">
+            <span class="num">4</span>
+            <h3>协商条款并签约</h3>
+            <p>就价格、付款方式、交房时间、家具家电归属等逐项谈清并写入合同。</p>
+          </div>
+          <div class="flow-step">
+            <span class="num">5</span>
+            <h3>办理贷款与资金安排</h3>
+            <p>如需贷款，提前了解额度、年限与所需材料，合理安排资金节点。</p>
+          </div>
+          <div class="flow-step">
+            <span class="num">6</span>
+            <h3>缴税与过户</h3>
+            <p>按规定缴纳相关税费，办理产权转移登记，取得新的权属证明。</p>
+          </div>
+          <div class="flow-step">
+            <span class="num">7</span>
+            <h3>交房与验收</h3>
+            <p>核对水电燃气、物业费用结清情况，确认房屋交付状态与约定一致。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 选房指南 + 侧栏 -->
+  <section id="guide" style="background:#eef5f3;">
+    <div class="wrap two-col">
+
+      <article class="article-box">
+        <h2>林口二手房选房参考指南</h2>
+        <p>
+          选二手房的关键，是把“看得见”和“看不见”的信息分开处理。看得见的是户型、装修、采光和周边环境；看不见的则是产权状态、房屋质量、费用结清情况和交易条款。前者靠多看多比较，后者靠核验和书面约定。
+        </p>
+
+        <h3>一、先定需求，再看房源</h3>
+        <p>
+          很多购房者容易在看房过程中被装修效果或价格吸引，逐渐偏离最初需求。建议在看房前写下一份简单的优先级清单，例如通勤时间、居住人数、是否需要电梯、是否接受高楼层等，再按清单逐项打分，减少情绪化决策。
+        </p>
+        <ul class="bullet">
+          <li>自住需求优先考虑居住舒适度与长期成本，而非短期价格波动。</li>
+          <li>过渡居住可适当放宽面积要求，但要重视转手便利性与实用性。</li>
+          <li>有老人或小孩的家庭，可重点关注楼层、无障碍与周边配套。</li>
+        </ul>
+
+        <h3>二、实地看房的观察重点</h3>
+        <p>
+          同一套房子在不同时间、不同天气下的表现可能差别明显。建议至少安排两次看房，一次在白天观察采光，一次在傍晚或雨天观察噪音、渗水与室内温度。
+        </p>
+        <ul class="bullet">
+          <li>墙体与天花板：留意水渍、发霉、开裂等痕迹。</li>
+          <li>厨卫区域：检查排水是否顺畅、地漏有无异味、防水是否可靠。</li>
+          <li>门窗与隔音：关闭门窗感受外界噪音，检查密封与开合顺畅度。</li>
+          <li>公共区域：楼道、电梯、消防通道与停车情况反映日常居住体验。</li>
+        </ul>
+
+        <h3>三、产权与费用核验</h3>
+        <p>
+          产权核验是二手房交易中最不能省略的环节。应确认房屋权利人信息与出售人是否一致，是否存在共有权人、抵押、查封或其他限制情形。此外，物业费、水电燃气费、供暖费等是否结清，也应在交房前明确。
+        </p>
+
+        <h3>四、合同条款要写细</h3>
+        <p>
+          价格、付款节奏、交房时间、户口迁出、家具家电归属、违约责任等，都建议以书面形式约定清楚。对于口头承诺的内容，尽量补充到合同或附件中，避免后续产生分歧。
+        </p>
+
+        <h3>五、量力而行，留出余量</h3>
+        <p>
+          除房款外，二手房交易还可能涉及税费、中介服务费、贷款相关费用、装修与家电添置等支出。建议在预算中预留一定弹性空间，避免资金安排过于紧张影响正常生活。
+        </p>
+      </article>
+
+      <aside>
+        <div class="side-box">
+          <h3>看房随身核对清单</h3>
+          <ol>
+            <li>产权人信息是否与出售人一致</li>
+            <li>是否存在抵押、查封或共有情况</li>
+            <li>房龄、朝向、楼层与户型是否匹配需求</li>
+            <li>水电燃气与物业费用是否结清</li>
+            <li>是否存在渗水、开裂、返潮等痕迹</li>
+            <li>周边噪音、采光与通行是否可接受</li>
+            <li>合同条款是否覆盖关键约定</li>
+          </ol>
+        </div>
+        <div class="side-box">
+          <h3>信息核实提示</h3>
+          <p class="side-note">
+            房屋信息、政策规定和税费标准可能随时间调整。涉及产权、贷款、税费等具体事项，建议通过当地房产管理部门、税务部门和正规金融机构等渠道核实，并以官方答复和书面合同为准。
+          </p>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- 注意事项 -->
+  <section id="tips">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>交易过程中容易忽略的细节</h2>
+        <p>以下事项不涉及具体金额与政策判断，仅作为提醒，帮助你在交易前后保持谨慎。</p>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h3>不要只看装修效果</h3>
+          <p>翻新过的房屋可能掩盖原有问题，建议关注结构、管线和防水等基础部分，而非表面装饰。</p>
+        </div>
+        <div class="tip-card">
+          <h3>避免口头承诺</h3>
+          <p>关于交房时间、家具家电、户口迁出等约定，尽量落实为书面条款，减少后续争议空间。</p>
+        </div>
+        <div class="tip-card">
+          <h3>谨慎对待低价房源</h3>
+          <p>价格明显偏离常见水平的房源，可能存在产权、质量或其他限制，需格外仔细核实。</p>
+        </div>
+        <div class="tip-card">
+          <h3>资金往来留凭证</h3>
+          <p>定金、首付款等款项建议通过可追溯方式支付，并保留凭证，明确对应事项与时间。</p>
+        </div>
+        <div class="tip-card">
+          <h3>确认贷款可行性</h3>
+          <p>在签约前了解自身贷款条件与额度，避免因资金安排不到位而产生违约风险。</p>
+        </div>
+        <div class="tip-card">
+          <h3>交房验收别省略</h3>
+          <p>交房时核对房屋现状、费用结清与物品清单，确认无误后再完成后续交接。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:#eef5f3;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>林口二手房常见问题</h2>
+        <p>以下回答为一般性说明，具体以当地现行规定和实际情况为准。</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>买二手房需要重点关注哪些方面？</h3>
+          <p>通常包括产权是否清晰、房屋质量与房龄、周边配套与通勤条件、费用是否结清，以及合同条款是否完整。建议把这几项列成清单逐项确认。</p>
+        </div>
+        <div class="faq-item">
+          <h3>看房一般要看几次比较合适？</h3>
+          <p>没有固定次数，但建议至少分不同时段看两次，白天看采光，傍晚或雨天看噪音和渗水情况。如果条件允许，可在工作日与周末各看一次，感受周边环境差异。</p>
+        </div>
+        <div class="faq-item">
+          <h3>房龄较大的二手房可以买吗？</h3>
+          <p>房龄本身不是绝对障碍，关键在于房屋结构安全、管线状况、维护成本和贷款条件。购买前应仔细检查水电、防水和外墙情况，并了解相关贷款政策是否适用。</p>
+        </div>
+        <div class="faq-item">
+          <h3>二手房交易中税费由谁承担？</h3>
+          <p>税费承担方式通常由买卖双方协商并在合同中约定，具体税种和标准因地区与房屋情况而异，建议以当地税务部门的说明为准。</p>
+        </div>
+        <div class="faq-item">
+          <h3>签约时需要注意什么？</h3>
+          <p>建议明确价格、付款方式与节点、交房时间、物品归属、户口迁出安排和违约责任等内容，并核对合同主体信息与产权信息是否一致。</p>
+        </div>
+        <div class="faq-item">
+          <h3>如何判断房源信息是否可靠？</h3>
+          <p>可通过产权核验、实地看房、与物业或邻居交流等方式交叉验证。对于明显低于常见水平或描述含糊的信息，应保持谨慎并进一步核实。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>林口二手房</h4>
+        <p>整理林口地区二手房选购思路、交易流程与看房注意事项，帮助购房者建立清晰的判断框架，理性看待房源信息。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#types">房源类型</a></li>
+          <li><a href="#flow">购房流程</a></li>
+          <li><a href="#guide">选房指南</a></li>
+          <li><a href="#tips">注意事项</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>购房参考</h4>
+        <ul>
+          <li><a href="#guide">产权核验要点</a></li>
+          <li><a href="#guide">看房观察清单</a></li>
+          <li><a href="#flow">交易环节说明</a></li>
+          <li><a href="#faq">常见问题解答</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>温馨提示</h4>
+        <ul>
+          <li>信息以官方渠道为准</li>
+          <li>交易前核实产权状况</li>
+          <li>重要约定写入合同</li>
+          <li>资金往来保留凭证</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>本站为二手房知识参考页面，不提供房源交易服务，内容不构成任何交易或投资建议。</span>
+      <span>政策与规定可能调整，请以当地主管部门最新口径为准。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var links = document.querySelectorAll('nav.main-nav a[href^="#"]');
+    links.forEach(function(link){
+      link.addEventListener('click', function(){
+        links.forEach(function(l){ l.classList.remove('active'); });
+        link.classList.add('active');
+      });
+    });
+  })();
+</script>
+
+</body>
+  </html>
