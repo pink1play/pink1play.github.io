@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>冒险岛风灵使者-职业定位、技能加点与玩法养成指南</title>
+<meta name="description" content="冒险岛风灵使者是《冒险岛》中弓箭手职业群·风灵使者的玩法专题页，整理职业定位、核心技能、加点思路、装备与联盟搭配、刷图与BOSS思路以及常见问题，帮助玩家快速了解这一职业。">
+<meta name="keywords" content="冒险岛风灵使者,风灵使者,冒险岛弓箭手,风灵使者加点,冒险岛职业">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --green-deep:#1f6b4a;
+    --green-mid:#2f9e6b;
+    --green-light:#e6f5ee;
+    --leaf:#8fd6b0;
+    --ink:#1d2a24;
+    --ink-soft:#4c5f56;
+    --line:#dfe9e3;
+    --bg:#f6faf7;
+    --card:#ffffff;
+    --amber:#e8a33d;
+    --radius:14px;
+    --shadow:0 6px 22px rgba(31,107,74,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  /* ============ 顶部 ============ */
+  .site-header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:12px 20px;
+    display:flex;
+    align-items:center;
+    gap:26px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:800;
+    font-size:19px;
+    color:var(--green-deep);
+    white-space:nowrap;
+  }
+  .brand-mark{
+    width:34px;height:34px;
+    border-radius:10px;
+    background:linear-gradient(135deg,var(--green-mid),var(--leaf));
+    display:grid;place-items:center;
+    color:#fff;font-size:17px;font-weight:700;
+    box-shadow:0 4px 10px rgba(47,158,107,.35);
+  }
+  .main-nav{
+    display:flex;
+    gap:4px;
+    flex-wrap:wrap;
+    font-size:15px;
+  }
+  .main-nav a{
+    padding:7px 13px;
+    border-radius:999px;
+    color:var(--ink-soft);
+    transition:.2s;
+  }
+  .main-nav a:hover{
+    background:var(--green-light);
+    color:var(--green-deep);
+  }
+  .nav-toggle{
+    display:none;
+    margin-left:auto;
+    background:var(--green-light);
+    border:none;
+    color:var(--green-deep);
+    font-size:15px;
+    padding:8px 14px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+  }
+
+  /* ============ 首屏 ============ */
+  .hero{
+    background:
+      radial-gradient(1200px 420px at 82% -10%, rgba(143,214,176,.55), transparent 62%),
+      linear-gradient(160deg,#eafaf1 0%,#f6faf7 62%);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:56px 20px 50px;
+    display:grid;
+    grid-template-columns:1.35fr .95fr;
+    gap:44px;
+    align-items:center;
+  }
+  .tagline{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#fff;
+    border:1px solid var(--line);
+    color:var(--green-deep);
+    font-size:13px;
+    font-weight:600;
+    padding:5px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  .tagline span.dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--green-mid);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(28px,4.4vw,44px);
+    line-height:1.25;
+    letter-spacing:-.5px;
+    color:#14432f;
+    margin-bottom:18px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--green-mid);
+  }
+  .hero-lead{
+    font-size:16.5px;
+    color:var(--ink-soft);
+    max-width:60ch;
+    margin-bottom:26px;
+  }
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:12px 24px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:15px;
+    transition:.2s;
+  }
+  .btn-primary{
+    background:var(--green-deep);
+    color:#fff;
+    box-shadow:0 8px 18px rgba(31,107,74,.25);
+  }
+  .btn-primary:hover{background:#17543a;transform:translateY(-1px);}
+  .btn-ghost{
+    background:#fff;
+    color:var(--green-deep);
+    border:1px solid var(--green-mid);
+  }
+  .btn-ghost:hover{background:var(--green-light);}
+
+  .hero-panel{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:26px;
+    box-shadow:var(--shadow);
+  }
+  .hero-panel h2{
+    font-size:16px;
+    color:var(--green-deep);
+    margin-bottom:16px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .hero-panel h2::before{
+    content:"";
+    width:4px;height:16px;
+    border-radius:2px;
+    background:var(--green-mid);
+  }
+  .stat-list{list-style:none;display:grid;gap:12px;}
+  .stat-list li{
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    font-size:14.5px;
+    padding-bottom:11px;
+    border-bottom:1px dashed var(--line);
+    color:var(--ink-soft);
+  }
+  .stat-list li:last-child{border-bottom:none;padding-bottom:0;}
+  .stat-list b{color:var(--ink);font-weight:600;text-align:right;}
+
+  /* ============ 通用区块 ============ */
+  .section{
+    max-width:1180px;
+    margin:0 auto;
+    padding:58px 20px;
+  }
+  .section-head{
+    margin-bottom:32px;
+    max-width:760px;
+  }
+  .section-head .kicker{
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:2px;
+    color:var(--green-mid);
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .section-head h2{
+    font-size:clamp(21px,2.6vw,28px);
+    color:#14432f;
+    line-height:1.35;
+    margin-bottom:12px;
+  }
+  .section-head p{
+    color:var(--ink-soft);
+    font-size:15.5px;
+  }
+  .alt-bg{
+    background:#fff;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+
+  /* ============ 定位卡片 ============ */
+  .role-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+  }
+  .role-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px 22px;
+    box-shadow:var(--shadow);
+    transition:.22s;
+  }
+  .role-card:hover{transform:translateY(-3px);border-color:var(--leaf);}
+  .role-icon{
+    width:42px;height:42px;
+    border-radius:12px;
+    background:var(--green-light);
+    color:var(--green-deep);
+    display:grid;place-items:center;
+    font-size:19px;
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  .role-card h3{
+    font-size:17px;
+    margin-bottom:9px;
+    color:#14432f;
+  }
+  .role-card p{
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+
+  /* ============ 技能表 ============ */
+  .skill-table-wrap{
+    overflow-x:auto;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:#fff;
+    box-shadow:var(--shadow);
+  }
+  table.skill-table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:640px;
+    font-size:14.5px;
+  }
+  .skill-table thead th{
+    background:var(--green-light);
+    color:var(--green-deep);
+    text-align:left;
+    padding:14px 18px;
+    font-weight:700;
+    white-space:nowrap;
+    border-bottom:1px solid var(--line);
+  }
+  .skill-table tbody td{
+    padding:14px 18px;
+    border-bottom:1px solid var(--line);
+    color:var(--ink-soft);
+    vertical-align:top;
+  }
+  .skill-table tbody tr:last-child td{border-bottom:none;}
+  .skill-table tbody tr:hover{background:#fbfdfc;}
+  .skill-table td.name{
+    color:var(--ink);
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .pill{
+    display:inline-block;
+    font-size:12px;
+    padding:2px 10px;
+    border-radius:999px;
+    background:var(--green-light);
+    color:var(--green-deep);
+    font-weight:600;
+  }
+  .pill.amber{background:#fdf3e2;color:#a86c12;}
+
+  /* ============ 加点步骤 ============ */
+  .steps{
+    display:grid;
+    gap:18px;
+    counter-reset:step;
+  }
+  .step{
+    display:grid;
+    grid-template-columns:56px 1fr;
+    gap:18px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:var(--shadow);
+  }
+  .step-num{
+    width:44px;height:44px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--green-mid),var(--leaf));
+    color:#fff;
+    font-weight:800;
+    display:grid;place-items:center;
+    font-size:16px;
+  }
+  .step h3{
+    font-size:16.5px;
+    color:#14432f;
+    margin-bottom:8px;
+  }
+  .step p{font-size:14.5px;color:var(--ink-soft);}
+  .step ul{
+    margin:10px 0 0 18px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    display:grid;
+    gap:5px;
+  }
+  .step-note{
+    margin-top:12px;
+    font-size:13.5px;
+    background:var(--green-light);
+    color:var(--green-deep);
+    padding:10px 14px;
+    border-radius:10px;
+    border-left:3px solid var(--green-mid);
+  }
+
+  /* ============ 装备两栏 ============ */
+  .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  .info-box{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px;
+    box-shadow:var(--shadow);
+  }
+  .info-box h3{
+    font-size:17.5px;
+    color:#14432f;
+    margin-bottom:14px;
+    display:flex;
+    align-items:center;
+    gap:9px;
+  }
+  .info-box h3::before{
+    content:"";
+    width:4px;height:17px;
+    border-radius:2px;
+    background:var(--green-mid);
+  }
+  .info-box p{font-size:14.5px;color:var(--ink-soft);margin-bottom:10px;}
+  .check-list{list-style:none;display:grid;gap:10px;font-size:14.5px;color:var(--ink-soft);}
+  .check-list li{
+    position:relative;
+    padding-left:24px;
+  }
+  .check-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;top:0;
+    color:var(--green-mid);
+    font-weight:800;
+  }
+  .warn-box{
+    background:#fdf7ec;
+    border:1px solid #f2e0bd;
+    border-radius:var(--radius);
+    padding:22px 24px;
+    margin-top:24px;
+  }
+  .warn-box h3{
+    font-size:16px;
+    color:#a86c12;
+    margin-bottom:10px;
+  }
+  .warn-box p{font-size:14.5px;color:#7a5c22;}
+
+  /* ============ 玩法场景 ============ */
+  .scene-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+  }
+  .scene{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px;
+    box-shadow:var(--shadow);
+  }
+  .scene .scene-tag{
+    font-size:12px;
+    font-weight:700;
+    color:var(--green-deep);
+    background:var(--green-light);
+    display:inline-block;
+    padding:3px 11px;
+    border-radius:999px;
+    margin-bottom:12px;
+  }
+  .scene h3{font-size:16.5px;color:#14432f;margin-bottom:10px;}
+  .scene p{font-size:14.5px;color:var(--ink-soft);}
+
+  /* ============ FAQ ============ */
+  .faq-list{display:grid;gap:12px;}
+  details.faq{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:0;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  details.faq summary{
+    cursor:pointer;
+    padding:17px 22px;
+    font-weight:600;
+    font-size:15.5px;
+    color:#14432f;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  details.faq summary::-webkit-details-marker{display:none;}
+  details.faq summary::after{
+    content:"＋";
+    color:var(--green-mid);
+    font-size:18px;
+    font-weight:700;
+    flex-shrink:0;
+  }
+  details.faq[open] summary::after{content:"－";}
+  details.faq .faq-body{
+    padding:0 22px 20px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    border-top:1px solid var(--line);
+    padding-top:16px;
+  }
+
+  /* ============ 页脚 ============ */
+  .site-footer{
+    background:#123326;
+    color:#c6dccf;
+    margin-top:20px;
+  }
+  .footer-inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:46px 20px 26px;
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:34px;
+  }
+  .footer-inner h4{
+    color:#fff;
+    font-size:15.5px;
+    margin-bottom:14px;
+  }
+  .footer-inner p,.footer-inner li{
+    font-size:14px;
+    line-height:1.9;
+    color:#9dbfac;
+  }
+  .footer-inner ul{list-style:none;display:grid;gap:6px;}
+  .footer-inner a:hover{color:#fff;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    text-align:center;
+    padding:18px 20px;
+    font-size:13px;
+    color:#7fa891;
+  }
+
+  /* ============ 响应式 ============ */
+  @media (max-width:960px){
+    .hero-inner{grid-template-columns:1fr;gap:32px;padding:42px 20px 40px;}
+    .two-col{grid-template-columns:1fr;}
+    .footer-inner{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:720px){
+    .header-inner{padding:10px 16px;gap:12px;flex-wrap:wrap;}
+    .nav-toggle{display:inline-block;}
+    .main-nav{
+      display:none;
+      width:100%;
+      flex-direction:column;
+      gap:2px;
+      padding-bottom:8px;
+    }
+    .main-nav.open{display:flex;}
+    .main-nav a{padding:10px 12px;border-radius:10px;}
+    .section{padding:42px 16px;}
+    .step{grid-template-columns:1fr;gap:12px;padding:20px;}
+    .step-num{width:38px;height:38px;font-size:15px;}
+    .footer-inner{grid-template-columns:1fr;gap:26px;padding:36px 16px 20px;}
+    .hero-panel{padding:22px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">风</span>
+      冒险岛风灵使者
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="展开导航">菜单</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#role">职业定位</a>
+      <a href="#skills">技能解析</a>
+      <a href="#build">加点思路</a>
+      <a href="#gear">装备与联盟</a>
+      <a href="#play">刷图与BOSS</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ 首屏 ============ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="tagline"><span class="dot"></span>弓箭手职业群 · 风属性远程输出</span>
+        <h1>冒险岛风灵使者：<em>以风为刃的远程输出职业</em>养成全解析</h1>
+        <p class="hero-lead">
+          风灵使者是《冒险岛》弓箭手职业群中以风属性与自然召唤为特色的分支，凭借较远的攻击距离、灵活的位移和持续输出能力，在刷图与组队副本中都有稳定表现。本页从职业定位、核心技能、加点顺序、装备与联盟搭配，到刷图和首领战的实战思路，帮你系统了解这个职业该怎么上手、怎么练。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#build">查看加点思路</a>
+          <a class="btn btn-ghost" href="#role">先了解职业定位</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel">
+        <h2>职业速览</h2>
+        <ul class="stat-list">
+          <li><span>职业群</span><b>弓箭手系</b></li>
+          <li><span>攻击方式</span><b>远程物理输出</b></li>
+          <li><span>属性倾向</span><b>敏捷（DEX）为主</b></li>
+          <li><span>核心特色</span><b>风属性技能与召唤物</b></li>
+          <li><span>上手难度</span><b>中等，偏操作节奏</b></li>
+          <li><span>适合人群</span><b>喜欢远程风筝与持续输出</b></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ 职业定位 ============ -->
+  <section class="section" id="role">
+    <div class="section-head">
+      <div class="kicker">Role &amp; Positioning</div>
+      <h2>风灵使者是什么样的职业</h2>
+      <p>理解一个职业，先看它在队伍里承担什么、在单人玩法里靠什么立足。风灵使者的关键词是“距离”“节奏”和“持续压制”。</p>
+    </div>
+
+    <div class="role-grid">
+      <article class="role-card">
+        <div class="role-icon">弓</div>
+        <h3>远程物理输出</h3>
+        <p>以弓箭类武器进行远距离攻击，能在多数怪物近身之前完成输出。相比近战职业，容错更多来自站位和走位，而不是硬吃伤害。</p>
+      </article>
+      <article class="role-card">
+        <div class="role-icon">风</div>
+        <h3>风属性主题技能</h3>
+        <p>技能体系围绕风与自然元素展开，攻击带有范围与穿透特征，适合在密集怪物区域中打出连续伤害，视觉表现也较为统一。</p>
+      </article>
+      <article class="role-card">
+        <div class="role-icon">移</div>
+        <h3>机动性较好</h3>
+        <p>拥有位移与跳跃类辅助手段，刷图时能快速穿越地图、调整输出位置；面对首领的弹幕与范围攻击时，走位空间相对充足。</p>
+      </article>
+      <article class="role-card">
+        <div class="role-icon">召</div>
+        <h3>召唤物辅助输出</h3>
+        <p>部分技能会召唤自然伙伴或风之精灵协同攻击，在持续战斗中提供额外伤害来源，也让输出节奏更平滑。</p>
+      </article>
+    </div>
+
+    <div class="warn-box">
+      <h3>需要提前了解的取舍</h3>
+      <p>远程职业普遍存在生存面板偏低的问题，风灵使者也不例外。它的强度很依赖技能循环是否顺畅、装备是否跟得上等级段，以及玩家对走位节奏的熟悉程度。如果习惯站桩硬拼，体验会明显打折。</p>
+    </div>
+  </section>
+
+  <!-- ============ 技能解析 ============ -->
+  <section class="section alt-bg" id="skills">
+    <div class="section-head">
+      <div class="kicker">Skills</div>
+      <h2>核心技能方向解析</h2>
+      <p>下面按“用途”归类说明技能方向，而不是罗列全部技能名。具体技能名称、等级上限与数值会随游戏版本调整，实际以游戏内当前版本说明为准。</p>
+    </div>
+
+    <div class="skill-table-wrap">
+      <table class="skill-table">
+        <thead>
+          <tr>
+            <th>技能方向</th>
+            <th>主要作用</th>
+            <th>使用场景</th>
+            <th>优先级参考</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="name">主输出技能</td>
+            <td>承担日常刷图与首领战的主要伤害来源，通常带有范围或多段打击特性。</td>
+            <td>全程使用，是技能循环的核心。</td>
+            <td><span class="pill amber">最高</span></td>
+          </tr>
+          <tr>
+            <td class="name">范围清怪技能</td>
+            <td>对一定范围内的多只怪物造成伤害，提升单位时间清怪效率。</td>
+            <td>地图怪物密集、需要快速推进时。</td>
+            <td><span class="pill amber">高</span></td>
+          </tr>
+          <tr>
+            <td class="name">增益与被动</td>
+            <td>提升攻击力、暴击、命中或攻速等属性，多数为常驻效果。</td>
+            <td>进图前开启，长期收益稳定。</td>
+            <td><span class="pill">高</span></td>
+          </tr>
+          <tr>
+            <td class="name">位移与生存</td>
+            <td>提供快速移动、短距离闪避或减伤效果，用于调整站位。</td>
+            <td>躲避首领技能、跨越地形、赶路。</td>
+            <td><span class="pill">中高</span></td>
+          </tr>
+          <tr>
+            <td class="name">召唤物技能</td>
+            <td>召唤伙伴持续攻击，补充额外伤害或提供辅助效果。</td>
+            <td>长时间战斗、需要稳定输出的场合。</td>
+            <td><span class="pill">中</span></td>
+          </tr>
+          <tr>
+            <td class="name">终极/爆发技能</td>
+            <td>短时间大幅提升输出，通常有较长冷却时间。</td>
+            <td>首领破防阶段、需要集中爆发的时刻。</td>
+            <td><span class="pill">中</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 加点思路 ============ -->
+  <section class="section" id="build">
+    <div class="section-head">
+      <div class="kicker">Build Guide</div>
+      <h2>加点与技能书思路</h2>
+      <p>加点没有唯一正确答案，但有一条通用原则：先保证能打得动、跑得开，再补细节收益。以下顺序适合大多数玩家的成长节奏。</p>
+    </div>
+
+    <div class="steps">
+      <article class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>优先点满主输出技能</h3>
+          <p>主输出技能决定了你清怪和打首领的基础效率，资源有限时应优先把它推到可用等级上限。</p>
+          <ul>
+            <li>先满足技能的前置条件，避免出现“想点却点不了”的情况。</li>
+            <li>如果主输出技能有强化分支，优先选择提升伤害与攻击次数的那一支。</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>补足被动与增益技能</h3>
+          <p>被动技能往往提供常驻属性加成，收益稳定且不占操作空间，属于“点了就不亏”的一类。</p>
+          <ul>
+            <li>攻击力、暴击率、暴击伤害类被动通常优先。</li>
+            <li>命中不足时，适当补命中相关技能，避免高等级怪物出现频繁未命中。</li>
+          </ul>
+          <div class="step-note">提示：不同版本对被动技能的加成方式可能调整，建议对照游戏内技能说明确认当前效果。</div>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>处理位移与生存技能</h3>
+          <p>远程职业的生存很大程度取决于能不能及时离开危险区域，位移技能即使不点满，也建议保持可用状态。</p>
+          <ul>
+            <li>至少保证一段可用的位移手段，用于躲避首领的大范围技能。</li>
+            <li>若技能点紧张，可先点到够用，后期再回补。</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="step-num">4</div>
+        <div>
+          <h3>最后补召唤物与爆发技能</h3>
+          <p>召唤物和爆发技能属于锦上添花，在基础循环成型之后再投入资源，收益会更明显。</p>
+          <ul>
+            <li>召唤物适合长时间战斗，短时间清图时优先级可以放低。</li>
+            <li>爆发技能注意与增益技能的持续时间对齐，避免浪费。</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 装备与联盟 ============ -->
+  <section class="section alt-bg" id="gear">
+    <div class="section-head">
+      <div class="kicker">Gear &amp; Legion</div>
+      <h2>装备方向与联盟搭配</h2>
+      <p>装备和联盟是远程物理职业拉开伤害差距的主要环节。以下是从属性到搭配的通用思路。</p>
+    </div>
+
+    <div class="two-col">
+      <div class="info-box">
+        <h3>属性与装备方向</h3>
+        <p>风灵使者以敏捷（DEX）为主要属性，装备选择上优先考虑能提升攻击力、暴击与敏捷的部件。</p>
+        <ul class="check-list">
+          <li>武器优先关注攻击力与强化等级，是伤害提升最直接的部位。</li>
+          <li>防具在保证基础防御的同时，尽量选择带敏捷或攻击加成的套装。</li>
+          <li>饰品与副手部位可补充暴击率、暴击伤害和命中。</li>
+          <li>潜能与附加属性优先攻击力、暴击伤害，其次为敏捷百分比。</li>
+          <li>强化与星力以稳定提升为原则，避免在过渡装备上过度投入。</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>联盟与角色卡思路</h3>
+        <p>联盟系统通过培养多个角色提供全局加成，对远程物理职业的收益较为明显。</p>
+        <ul class="check-list">
+          <li>优先培养能提供攻击力、暴击率、暴击伤害加成的角色。</li>
+          <li>敏捷类角色卡可补充主属性，适合长期收益。</li>
+          <li>生存压力大时，可考虑补充最大生命或减伤类加成。</li>
+          <li>联盟等级提升是长期工程，按自身节奏逐步推进即可。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <h3>关于“抄作业”的提醒</h3>
+      <p>网上流传的配装方案往往针对特定版本与特定玩法（如纯刷图或纯首领战）。直接照搬可能不适合你的等级段和预算。建议先明确自己当前的主要目标，再参考对应方向的搭配。</p>
+    </div>
+  </section>
+
+  <!-- ============ 刷图与BOSS ============ -->
+  <section class="section" id="play">
+    <div class="section-head">
+      <div class="kicker">Gameplay</div>
+      <h2>刷图与首领战实战思路</h2>
+      <p>同一个职业在不同玩法里的操作重点并不相同。下面分别说明刷图和首领战的注意点。</p>
+    </div>
+
+    <div class="scene-grid">
+      <article class="scene">
+        <span class="scene-tag">刷图</span>
+        <h3>保持移动，减少空转</h3>
+        <p>刷图效率取决于单位时间击杀数量。利用范围技能覆盖怪物密集区，配合位移快速转场，避免在原地等待技能冷却。地图选择上，优先考虑怪物密度高、地形平坦的区域。</p>
+      </article>
+      <article class="scene">
+        <span class="scene-tag">刷图</span>
+        <h3>合理利用召唤物</h3>
+        <p>召唤物可以在你移动时继续输出，适合放在怪物刷新点附近。注意召唤物的持续时间，及时补充，避免出现输出空档。</p>
+      </article>
+      <article class="scene">
+        <span class="scene-tag">首领战</span>
+        <h3>先熟悉机制再谈输出</h3>
+        <p>首领战的核心是活下来并保持输出。先记住关键技能的预警动作和范围，再考虑把增益与爆发技能安排在安全窗口内释放。</p>
+      </article>
+      <article class="scene">
+        <span class="scene-tag">首领战</span>
+        <h3>站位与距离管理</h3>
+        <p>远程职业要避免贴脸，但也不能离得太远导致技能打空。找到既能输出又方便撤离的“黄金距离”，是提升首领战表现的关键。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section alt-bg" id="faq">
+    <div class="section-head">
+      <div class="kicker">FAQ</div>
+      <h2>常见问题</h2>
+      <p>整理玩家在了解风灵使者时最常提出的几个问题。</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq" open>
+        <summary>风灵使者适合新手玩吗？</summary>
+        <div class="faq-body">
+          整体属于中等难度。它的操作逻辑比较直观，远程输出也给了较多反应时间，适合喜欢远程职业的玩家。但远程职业普遍需要一定的走位意识，如果完全不习惯躲避技能，前期可能会觉得吃力。建议先熟悉位移技能和基础技能循环。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>风灵使者的主要属性是什么？</summary>
+        <div class="faq-body">
+          以敏捷（DEX）为主要属性，装备与潜能搭配围绕敏捷、攻击力、暴击相关属性展开。具体属性收益会随版本变化，建议以游戏内当前版本的属性说明为准。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>技能点不够时应该怎么取舍？</summary>
+        <div class="faq-body">
+          通用原则是：主输出技能优先，其次是被动与增益，再次是位移与生存，最后是召唤物和爆发技能。如果某个技能有前置要求，先满足前置再考虑其他。技能点分配并非一成不变，可以根据自己常玩的内容调整。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>刷图和打首领的加点需要分开吗？</summary>
+        <div class="faq-body">
+          如果游戏内提供了技能重置或双技能页功能，可以针对刷图和首领战分别配置。若没有，则建议选择兼顾两者的通用方案，优先保证主输出和核心被动，再根据实际体验微调。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>装备不好时怎么提升体验？</summary>
+        <div class="faq-body">
+          可以从几个方向入手：优先强化武器、补齐基础套装、合理利用联盟与角色卡加成、选择适合自己等级段的地图。伤害不足时，适当降低难度或更换练级区域，往往比硬撑更有效率。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>页面里的技能和数值是最新的吗？</summary>
+        <div class="faq-body">
+          本页侧重介绍职业定位与通用思路，不针对某一具体版本罗列精确数值。游戏版本更新后，技能名称、效果和数值都可能调整，实际请以游戏内当前版本的技能说明和官方公告为准。
+        </div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <h4>关于本页</h4>
+      <p>这是一个围绕“冒险岛风灵使者”整理的职业玩法参考页，内容以职业定位、技能方向、加点思路和实战经验为主，帮助玩家建立整体认知。</p>
+    </div>
+    <div>
+      <h4>快速导航</h4>
+      <ul>
+        <li><a href="#role">职业定位</a></li>
+        <li><a href="#skills">技能解析</a></li>
+        <li><a href="#build">加点思路</a></li>
+        <li><a href="#gear">装备与联盟</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>内容说明</h4>
+      <ul>
+        <li>具体数值以游戏内为准</li>
+        <li>版本更新可能影响技能效果</li>
+        <li>配装方案需结合自身情况</li>
+        <li>建议先明确玩法目标再投入</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    冒险岛风灵使者 · 职业玩法参考页
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var nav = document.getElementById('mainNav');
+    if(toggle && nav){
+      toggle.addEventListener('click', function(){
+        nav.classList.toggle('open');
+      });
+      nav.addEventListener('click', function(e){
+        if(e.target.tagName === 'A'){
+          nav.classList.remove('open');
+        }
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
